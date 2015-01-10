@@ -1,0 +1,157 @@
+@import "_settings.scss";
+@import ".meteor/local/build/programs/server/assets/packages/matthew_foundation5-sass/foundation";
+@import url(http://fonts.googleapis.com/css?family=Satisfy);
+
+$theme-font: 'Satisfy', Helvetica, sans-serif;
+$text-gray: #424242;
+$light-gray: #777;
+$youtube-red: #e52d27;
+
+body {
+	color: $text-gray;
+}
+
+input[type="text"] {
+	height: 50px;
+	font-weight: 300;
+	color: $text-gray;
+}
+
+ul {
+	list-style: none;
+}
+
+::selection {
+	color: whiteSmoke;
+	background-color: transparentize($youtube-red, 0.25);
+}
+
+.row {
+	max-width: 1080px;
+}
+
+.header {
+	padding-top: 15px;
+
+	.page-title {
+		text-align: center;
+		font-family: $theme-font;
+		color: $youtube-red;
+	}
+
+	.page-title .last-word {
+		color: $text-gray;
+	}
+
+	.fa-search {
+		position: absolute;
+		padding: 8px;
+		padding-left: 15px;
+	}
+
+	.search-box {
+		padding-left: 60px;
+		text-align: center;
+		background: none;
+		border-bottom: 1px solid #efefef;
+	}
+}
+
+.invite {
+	display: none;
+
+	.invite-dismiss {
+		float: left;
+		padding: 9px;
+		padding-left: 15px;
+		cursor: pointer;
+	}
+
+	.invite-dismiss:hover {
+		color: scale-color($text-gray, $lightness: 20%);
+	}
+
+	h3 {
+		margin: 0;
+		padding: 8px;
+		text-align: right;
+		color: $text-gray;
+	}
+
+	.invite-url {
+		font-size: 1.6em;
+	}
+}
+
+.player-wrapper {
+	display: none;
+	height: 70%;
+	max-height: 600px;
+	text-align: center;
+	background: #000;
+
+	iframe {
+		width: 100%;
+		height: 100%;
+		max-width: 1080px;
+		margin-bottom: -6px;
+	}
+}
+
+.info {
+	padding-top: 15px;
+
+	.video-title {
+		color: $text-gray;
+	}
+
+	.watchers {
+		text-align: right;
+
+		.watch-count {
+			font-size: 3em;
+			line-height: 1.2em;
+			color: $youtube-red;
+		}
+
+		.label-text {
+			text-transform: uppercase;
+			font-size: 0.8em;
+			color: $light-gray;
+		}
+	}
+}
+
+.messages {
+	padding-top: 15px;
+
+	.fa-comment-o {
+		position: absolute;
+		padding: 8px;
+		padding-left: 15px;
+	}
+
+	.message-input {
+		padding-left: 60px;
+		background: none;
+		border-bottom: 1px solid #efefef;
+	}
+
+	ul {
+		max-height: 300px;
+		overflow: auto;
+		margin-left: 1.5em;
+	}
+
+	.message {
+		font-size: 1.2em;
+		font-weight: 300;
+		color: $light-gray;
+	}
+
+	.message::before {
+		content: '>';
+		color: $youtube-red;
+		padding-right: 15px;
+	}
+}

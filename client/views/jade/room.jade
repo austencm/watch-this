@@ -1,0 +1,43 @@
+template(name="room")
+	header.header
+		h1.page-title Watch
+			span.last-word This
+
+		if isOwner
+			div.row
+				div.column
+					i.fa.fa-2x.fa-search
+					input.search-box(type='text', placeholder='Search YouTube...', autofocus)
+				div.invite
+					div.row
+						div.medium-5.column
+							i.invite-dismiss.fa.fa-2x.fa-times
+							h3 Invite to watch: 
+						div.medium-7.column
+							input.invite-url(type='text', value=inviteURL, readonly)
+
+	div.player-wrapper
+		+player
+
+	div.info
+		div.row
+			div.small-9.column
+				h2.video-title
+					if videoTitle
+						| #{ videoTitle }
+					else
+						| Waiting for video...
+			div.small-3.column
+				div.watchers
+					span.watch-count= watchers
+					span.label-text watching
+
+	div.messages
+		div.row
+			div.column
+				i.fa.fa-2x.fa-comment-o
+				form
+					input.message-input(type="text", placeholder='Chatter')
+				ul
+					each messages
+						li.message(style="color: #{color}")= text
